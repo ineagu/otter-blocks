@@ -41,7 +41,8 @@ import {
 import {
 	Fragment,
 	useContext,
-	useState
+	useState,
+	memo
 } from '@wordpress/element';
 import { applyFilters } from '@wordpress/hooks';
 
@@ -342,7 +343,7 @@ const FormOptions = ({ formOptions, setFormOption, attributes, setAttributes }) 
  * @param {import('./type.js').FormInspectorProps} props
  * @return
  */
-const Inspector = ({
+const Inspector = memo(({
 	attributes,
 	setAttributes
 }) => {
@@ -1132,6 +1133,6 @@ const Inspector = ({
 			</InspectorAdvancedControls>
 		</InspectorControls>
 	);
-};
+});
 
 export default Inspector;
